@@ -1,0 +1,58 @@
+<h1>Find your Instagram Doppleganger!</h1>
+
+Enter your picture URL:
+<form action="<%= root_path %>">
+<input class="form-control" type="text" name="photo">
+<br>
+<input class="btn btn-success" type="submit" onclick="spinner()">
+
+</form>
+
+<img class="spinner" src="https://playparole-oktala.rhcloud.com/app/www/img/spinner_big.gif">
+
+<% if params[:photo] %>
+  <div class="row">
+    You:
+    <br>
+    <%= image_tag @me, class:'photo' %>
+  </div>
+
+  <div class="row">
+    <h4>Potential dopplegangers:</h4>
+    <% @images.length.times do |i| %>
+      <div class="col-md-2">
+        <%= image_tag @images[i], class:'instagram' %>
+        <br>
+        <p><%= @matches[i] ? "#{@matches[i]['similarity'].round(2)}% similar" : "No match" %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <h3>And the winner is:</h3>
+    <br>
+    <h4><%= @best_match.round(2) %>% similar</h4>
+    <%= image_tag @images[@best_match_index] %>
+  </div>
+<% end %>
+
+
+
+<style>
+img.instagram {
+  width: 150px;
+  height: 150px;
+}
+img.photo {
+  width: 200px;
+}
+img.spinner {
+  display: none;
+}
+</style>
+
+<script>
+function spinner() {
+  $('.spinner').css({display: 'inline-block'});
+}
+</script>
