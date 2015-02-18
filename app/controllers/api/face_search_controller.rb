@@ -18,6 +18,7 @@ class Api::FaceSearchController < ApplicationController
 
     # redirect_to results_path
     render json: @matches
+
   end
 
 
