@@ -1,0 +1,78 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+
+body {
+  background-color: white;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+
+#divLoading {
+  display: none;
+}
+#divLoading.show {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  background-image: url('http://loadinggif.com/images/image-selection/3.gif');
+  background-color: #666;
+  opacity: 0.4;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+#loadinggif.show {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  z-index: 101;
+  width: 33px;
+  height: 33px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+div.content {
+  width: 1100px;
+  height: 1100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
